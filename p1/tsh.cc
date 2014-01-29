@@ -1,7 +1,7 @@
 // 
 // tsh - A tiny shell program with job control
 // 
-// <Put your name and login ID here>
+// Michael Sawyer <ecst:msawyer> <github:masstamike>
 //
 
 using namespace std;
