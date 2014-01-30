@@ -167,9 +167,13 @@ void eval(char *cmdline)
   string cmd(argv[0]);
   if (cmd=="quit")
     builtin_cmd(argv);
-  else
-    execve(argv[0],argv, NULL);
-    
+  else {
+    pid_t sub = fork();
+    if (sub)
+      wait(NULL);
+    else
+      execve(argv[0],argv, NULL);
+  }
   return;
 }
 
